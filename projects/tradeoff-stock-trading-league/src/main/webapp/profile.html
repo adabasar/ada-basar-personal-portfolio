@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TradeOff - Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="league.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body data-current-username="">
+
+<div id="header-placeholder"></div>
+
+<div class="page">
+    <!-- Profile Header -->
+    <div class="card profile-header-card">
+        <div class="profile-header">
+            <img id="profilePic" src="default_profile.jpg" alt="Profile Picture">
+            <div class="profile-info">
+                <h1 id="username">Username</h1>
+                <button class="btn btn-secondary friends-list-btn" id="friendsListBtn">
+                    👥 Friends List
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Personal Information Section -->
+    <section class="card">
+        <div class="card-header">
+            <div class="card-title">Personal Information</div>
+        </div>
+        <div class="card-content personal-info-grid">
+            <div class="form-group">
+                <label for="displayName">Display Name</label>
+                <input type="text" id="displayName" placeholder="Enter display name">
+                <label for="contactInfo">Contact Information</label>
+                <textarea id="contactInfo" rows="3" placeholder="Enter email, phone, etc."></textarea>
+            	<label>
+                    <input type="checkbox" id="profileVisibility">
+                    Public Account Visibility
+                </label>
+            </div>
+            <div class="profile-footer">
+                <span id="personalInfoMsg"></span>
+                <button class="btn-primary btn" id="saveProfileBtn">Save Changes</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- League and Performance Section -->
+    <section class="card">
+        <div class="card-content league-performance-grid">
+            <div class="info-column">
+                <div class="info-item">
+                    <strong>Current League:</strong>
+                    <p id="currentLeague">-</p>
+                </div>
+                <div class="info-item">
+                    <strong>League Ranking:</strong>
+                    <p id="leagueRanking">-</p>
+                </div>
+            </div>
+            <div class="info-column">
+                <div class="info-item">
+                    <strong>Available Capital:</strong>
+                    <p id="availableCapital">-</p>
+                </div>
+                <div class="info-item">
+                    <strong>Portfolio Value:</strong>
+                    <p id="portfolioValue">-</p>
+                </div>
+            </div>
+            <div class="info-column">
+                <div class="info-item">
+                    <strong>Profit/Loss:</strong>
+                    <p id="performance">-</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Friends Popup Modal -->
+<div class="friends-modal" id="friendsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999; align-items: center; justify-content: center;">
+    <div class="friends-modal-content" style="background: #1c1e22; border: 1px solid #333; border-radius: 12px; width: 90%; max-width: 500px; max-height: 80vh; display: flex; flex-direction: column;">
+        <div class="friends-modal-header">
+            <h2>Friends</h2>
+            <button class="friends-close-btn" id="closeModalBtn">&times;</button>
+        </div>
+        
+        <!-- Tabs -->
+        <div class="friends-tabs">
+            <button class="friends-tab active" id="friendsTab">Friends</button>
+            <button class="friends-tab" id="pendingTab">Pending</button>
+            <button class="friends-tab" id="addFriendTab">Add Friend</button>
+        </div>
+        
+        <!-- Friends List View -->
+        <div class="friends-view" id="friendsView">
+            <div class="friends-list" id="friendsList">
+                <p class="friends-loading">Loading friends...</p>
+            </div>
+        </div>
+        
+        <!-- Pending Requests View -->
+        <div class="friends-view" id="pendingView" style="display: none;">
+            <div class="friends-list" id="pendingList">
+                <p class="friends-loading">Loading requests...</p>
+            </div>
+        </div>
+        
+        <!-- Add Friend View -->
+        <div class="friends-view" id="addFriendView" style="display: none;">
+            <div class="search-container">
+                <input 
+                    type="text" 
+                    class="friend-search-input" 
+                    id="friendSearchInput" 
+                    placeholder="Search by username..."
+                />
+            </div>
+            <div class="search-results" id="searchResults">
+                <p class="search-empty">Enter a username to search</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="header.js"></script>
+<script src="profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+/* Leaderboard Page Styles */
+
+.leaderboard-card {
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 8px;
+    padding: 0 20px;
+    border-bottom: 1px solid #333;
+    background-color: #1c1e22;
+}
+
+.tab {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.tab:hover {
+    color: #e0e0e0;
+    background-color: #252830;
+}
+
+.tab.active {
+    color: #3b82f6;
+    border-bottom-color: #3b82f6;
+}
+
+/* Leaderboard Container - Two Column Layout */
+.leaderboard-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    min-height: 500px;
+}
+
+/* Table Section - Takes 70% of space */
+.leaderboard-table-wrapper {
+    flex: 1;
+    min-width: 0; /* Allows flex item to shrink below content size */
+    overflow-x: auto;
+}
+
+/* Leaderboard Table */
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1c1e22;
+}
+
+.leaderboard-table thead {
+    background-color: #252830;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.leaderboard-table th {
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #333;
+}
+
+.leaderboard-table tbody tr {
+    border-bottom: 1px solid #2a2d35;
+    transition: background-color 0.15s;
+}
+
+.leaderboard-table tbody tr:hover {
+    background-color: #252830;
+}
+
+.leaderboard-table td {
+    padding: 14px 16px;
+    font-size: 14px;
+    color: #e0e0e0;
+}
+
+/* Column Widths */
+.col-rank {
+    width: 80px;
+    text-align: center !important;
+}
+
+.col-user {
+    width: auto;
+    min-width: 150px;
+}
+
+.col-equity {
+    width: 180px;
+    text-align: right !important;
+}
+
+.col-pct {
+    width: 120px;
+    text-align: right !important;
+    font-weight: 600;
+}
+
+/* Clickable user names */
+.clickable {
+    cursor: pointer;
+    color: #3b82f6;
+    transition: color 0.15s;
+}
+
+.clickable:hover {
+    color: #60a5fa;
+    text-decoration: underline;
+}
+
+/* Percentage colors */
+.positive {
+    color: #22c55e !important;
+}
+
+.negative {
+    color: #ef4444 !important;
+}
+
+.neutral {
+    color: #9ca3af !important;
+}
+
+/* User Details Sidebar - Takes 30% of space */
+.user-details-panel {
+    width: 300px;
+    flex-shrink: 0;
+    background-color: #1c1e22;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.user-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #9ca3af;
+    text-align: center;
+}
+
+.user-top {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #333;
+}
+
+.user-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #3b3b3b;
+}
+
+.user-meta {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.user-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #e0e0e0;
+}
+
+.user-capital,
+.user-league {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.user-capital .label,
+.user-league .label {
+    font-size: 12px;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.user-capital .value,
+.user-league .value {
+    font-size: 16px;
+    color: #e0e0e0;
+    font-weight: 500;
+}
+
+.user-capital .value.muted {
+    color: #6b7280;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .leaderboard-container {
+        flex-direction: column;
+    }
+    
+    .user-details-panel {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .leaderboard-card {
+        width: 100%;
+    }
+    
+    .leaderboard-container {
+        padding: 12px;
+    }
+    
+    .leaderboard-table th,
+    .leaderboard-table td {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    
+    .col-rank {
+        width: 60px;
+    }
+    
+    .col-equity {
+        width: 140px;
+    }
+    
+    .col-pct {
+        width: 100px;
+    }
+    
+    .tab {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+}

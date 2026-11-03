@@ -1,0 +1,431 @@
+
+/* Form Layout */
+/* Limit profile card width */
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Each card takes up 2/3 of the screen */
+.page .card {
+    width: 66%;
+    max-width: 900px;
+}
+
+/* Personal Information Grid to match League section */
+.personal-info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 24px;
+}
+
+
+/* --- FIXED FORM GROUP --- */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;   /* ensures left alignment */
+    gap: 6px;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #d1d5db;
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;               /* full width */
+    max-width: 100%;
+}
+
+/* Checkbox alignment - spans full width */
+.toggle-wrap {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.toggle-wrap label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #9ca3af;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Footer - spans full width */
+.profile-footer {
+    grid-column: 1 / -1;
+    margin-top: 12px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+}
+
+.success-msg {
+    color: #4ade80;
+}
+
+.error-msg {
+    color: #ef4444;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .personal-info-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Make the profile section match the league dark style */
+.profile-header-card {
+    padding: 20px;
+}
+
+/* Enlarge profile picture */
+.profile-header img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #3b3b3b;
+}
+
+/* Put picture + username on same row */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Container for username and friends button */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Keep username styling consistent with league.css h1 */
+.profile-header h1 {
+    font-size: 2.2rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Friends List Button */
+.friends-list-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+    width: fit-content;
+}
+
+/* Dark theme input boxes to match the page background */
+.card input[type="text"],
+.card textarea {
+    background-color: #1c1e22;
+    color: #e0e0e0;
+    border: 1px solid #333;
+    padding: 10px;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.card input[type="text"]::placeholder,
+.card textarea::placeholder {
+    color: #888;
+}
+
+/* Checkbox remains consistent */
+.toggle-wrap input[type="checkbox"] {
+    transform: scale(1.1);
+}
+
+/* League and Performance Grid Layout */
+.league-performance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    padding: 20px;
+}
+
+.info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.info-item strong {
+    font-size: 13px;
+    color: #9ca3af;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.info-item p {
+    font-size: 18px;
+    color: #e0e0e0;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .league-performance-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Friends Modal */
+.friends-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+
+.friends-modal-content {
+    background: #1c1e22;
+    border: 1px solid #333;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
+}
+
+.friends-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.friends-modal-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #e0e0e0;
+}
+
+.friends-close-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #9ca3af;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.friends-close-btn:hover {
+    background: #252830;
+    color: #e0e0e0;
+}
+
+/* Tabs */
+.friends-tabs {
+    display: flex;
+    border-bottom: 1px solid #333;
+    padding: 0 20px;
+}
+
+.friends-tab {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.friends-tab:hover {
+    color: #e0e0e0;
+}
+
+.friends-tab.active {
+    color: #3b82f6;
+    border-bottom-color: #3b82f6;
+}
+
+/* Views */
+.friends-view {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Friends List */
+.friends-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.friends-loading,
+.friends-empty,
+.search-empty {
+    text-align: center;
+    color: #9ca3af;
+    padding: 40px 20px;
+}
+
+/* Friend Card */
+.friend-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background: #252830;
+    border: 1px solid #333;
+    border-radius: 8px;
+    gap: 12px;
+}
+
+.friend-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+}
+
+.friend-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #3b3b3b;
+    flex-shrink: 0;
+}
+
+.friend-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.friend-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #e0e0e0;
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.friend-capital {
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.remove-friend-btn,
+.add-friend-btn {
+    flex-shrink: 0;
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
+/* Search Container */
+.search-container {
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.friend-search-input {
+    width: 100%;
+    padding: 12px;
+    background: #252830;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #e0e0e0;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.friend-search-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+.friend-search-input::placeholder {
+    color: #6b7280;
+}
+
+/* Search Results */
+.search-results {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Request Actions */
+.request-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.request-actions .btn {
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
+/* Scrollbar styling */
+.friends-view::-webkit-scrollbar {
+    width: 8px;
+}
+
+.friends-view::-webkit-scrollbar-track {
+    background: #1c1e22;
+}
+
+.friends-view::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+.friends-view::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}

@@ -1,0 +1,304 @@
+@charset "UTF-8";
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	background: #020617;
+    color: #e5e7eb;
+}
+
+.page {
+	padding: 20px 24px 32px;
+}
+
+h1 {
+	margin: 0 0 4px;
+	font-size: 22px;
+}
+
+
+.card {
+	background: #020617;
+    border-radius: 14px;
+    border: 1px solid #1f2937;
+    padding: 16px 16px 14px;
+    margin-bottom: 16px;
+}
+
+.card-header {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card-title {
+	font-size: 15px;
+    font-weight: 600;
+}
+
+.grid {
+	display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 18px;
+}
+
+.btn {
+	border-radius: 999px;
+	border: 1px solid #4b5563;
+    background: #111827;
+    color: #e5e7eb;
+    padding: 6px 12px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.btn:hover {
+	background: #1f2937;
+}
+
+.btn-primary {
+	border-color: #5cff95;
+    background: #5cff95;
+    color: #020617;
+}
+
+.btn-primary:hover {
+	background: #16a34a;
+}
+
+.btn-danger {
+	border-color: #ef4444;
+    background: #b91c1c;
+}
+
+.btn-danger:hover {
+	background: #991b1b;
+}
+
+.btn-pill-group {
+	display: inline-flex;
+    gap: 6px;
+    background: #020617;
+    border: 1px solid #4b5563;
+    border-radius: 999px;
+    padding: 3px;
+}
+
+.btn-pill {
+	border: none;
+	background: transparent;
+	color: #9ca3af;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.btn-pill.active {
+	background: #5cff95;
+	color: #020617;
+}
+
+.btn-join[data-join-type="private"] {
+    border-color: #5cff95;
+    background: #5cff95;
+    color: #020617;
+}
+
+.btn-join[data-join-type="private"]:hover {
+    background: #16a34a;
+}
+
+
+
+table {
+	width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+th, td {
+	padding: 6px 8px;
+    border-bottom: 1px solid #1f2937;
+}
+
+th {
+	font-size: 11px;
+    color: #9ca3af;
+}
+
+tr:hover {
+	background: rgba(15, 23, 42, 0.6);
+}
+
+.clickable-name {
+	color: #5cff95;
+    cursor: pointer;
+}
+
+.clickable-name:hover {
+	text-decoration: underline;
+}
+
+
+
+ul.roster {
+	list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.roster li {
+	padding: 6px 4px;
+    border-bottom: 1px solid #1f2937;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+
+.roster-name {
+	color: #5cff95;
+    cursor: pointer;
+}
+
+.roster-name:hover {
+	text-decoration: underline;
+}
+
+.roster-role {
+	font-size: 11px;
+    color: #9ca3af;
+}
+
+
+.settings-panel {
+	margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #020617;
+    border: 1px solid #374151;
+    display: none;
+}
+
+.settings-row {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.settings-label {
+	font-size: 13px;
+}
+
+.toggle-wrap {
+	display: inline-flex;
+    align-items: center;
+    gap: 5px;
+ }
+
+.toggle-wrap input[type="checkbox"] {
+	cursor: pointer;
+}
+
+.settings-footer {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.settings-footer-left {
+	display: flex;
+    gap: 8px;
+}
+
+
+.no-league {
+	max-width: 900px;
+    margin: 0 auto;
+}
+
+.no-league-heading {
+	font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.no-league-sub {
+	font-size: 13px;
+    color: #9ca3af;
+    margin-bottom: 16px;
+}
+
+.league-list {
+	margin: 10px 0 18px;
+}
+
+.league-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 8px 6px;
+	border-bottom: 1px solid #1f2937;
+	font-size: 13px;
+}
+
+.league-name {
+	color: #5cff95;
+	cursor: pointer;
+}
+
+.league-name:hover {
+	text-decoration: underline;
+}
+
+.league-meta {
+	font-size: 11px;
+	color: #9ca3af;
+}
+
+.pill {
+	display: inline-block;
+	font-size: 10px;
+	border-radius: 999px;
+	padding: 2px 8px;
+	border: 1px solid #4b5563;
+	margin-left: 6px;
+}
+        
+#rankingTable {
+    display: block;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#rosterList {
+    max-height: 260px;
+    overflow-y: auto;
+    padding-right: 6px; 
+}
+
+.league-list {
+    max-height: 260px;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #1e293b;
+    border-radius: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}

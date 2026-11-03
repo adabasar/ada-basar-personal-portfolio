@@ -1,0 +1,324 @@
+@charset "UTF-8";
+
+/* Layout base to work with header */
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #020617;
+    color: #f9fafb;
+}
+
+.page {
+    padding: 24px;
+    max-width: 1400px;
+    margin: 24px auto 0;
+}
+
+.page h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #f9fafb;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 280px 1fr 400px;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+/* Card Styles */
+.card {
+    background: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #f9fafb;
+    margin-bottom: 2px;
+}
+
+.card-subtitle {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+/* Profile Section */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-icon {
+    width: 100px;
+    height: 100px;
+    background: #1e1b4b;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.balance {
+    font-size: 28px;
+    font-weight: 700;
+    color: #f9fafb;
+    margin-bottom: 4px;
+}
+
+.balance-label {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-bottom: 20px;
+}
+
+.portfolio-stats {
+    width: 100%;
+    border-top: 1px solid #1f2937;
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-label {
+    font-size: 11px;
+    color: #9ca3af;
+    margin-bottom: 4px;
+}
+
+.stat-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #f9fafb;
+}
+
+.stat-value.positive {
+    color: #22c55e;
+}
+
+.stat-value.negative {
+    color: #f97373;
+}
+
+/* Sort Icons */
+.sort-icons {
+    display: flex;
+    gap: 8px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    color: #9ca3af;
+    transition: all 0.2s;
+}
+
+.icon-btn:hover {
+    background: #1f2937;
+    color: #f9fafb;
+}
+
+/* Investments Table */
+.investments-table-wrapper {
+    overflow-x: auto;
+}
+
+.investments-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.investments-table thead th {
+    text-align: left;
+    padding: 10px 8px;
+    font-weight: 600;
+    font-size: 12px;
+    color: #9ca3af;
+    border-bottom: 1px solid #1f2937;
+}
+
+.investments-table tbody tr {
+    border-bottom: 1px solid #1f2937;
+    transition: background 0.2s;
+}
+
+.investments-table tbody tr:hover {
+    background: #0f172a;
+}
+
+.investments-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.investments-table tbody td {
+    padding: 12px 8px;
+    font-size: 14px;
+    color: #e5e7eb;
+}
+
+.holding-name {
+    font-weight: 600;
+    color: #f9fafb;
+}
+
+.price-positive {
+    color: #22c55e;
+    font-weight: 600;
+}
+
+.price-negative {
+    color: #f97373;
+    font-weight: 600;
+}
+
+.percent-positive {
+    color: #22c55e;
+    font-weight: 600;
+}
+
+.percent-negative {
+    color: #f97373;
+    font-weight: 600;
+}
+
+/* Chart Container */
+.chart-container {
+    background: #020617;
+    border-radius: 12px;
+    border: 1px solid #1f2937;
+    padding: 16px;
+    position: relative;
+    min-height: 200px;
+    margin-bottom: 12px;
+}
+
+.chart-status {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #9ca3af;
+    background: rgba(2, 6, 23, 0.75);
+    border-radius: 12px;
+}
+
+.chart-status-error {
+    color: #fecaca;
+}
+
+/* Chart specific styles */
+#portfolioChart {
+    width: 100% !important;
+    height: 200px !important;
+}
+
+/* Button Pill Group */
+.btn-pill-group {
+    display: flex;
+    gap: 4px;
+}
+
+.btn-pill {
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #9ca3af;
+    background: transparent;
+    border: 1px solid #374151;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-pill:hover {
+    background: #1f2937;
+    color: #f9fafb;
+}
+
+.btn-pill.active {
+    background: #6366f1;
+    border-color: #6366f1;
+    color: #ffffff;
+}
+
+/* Buttons */
+.btn {
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background: #6366f1;
+    color: #ffffff;
+    border-color: #6366f1;
+}
+
+.btn-primary:hover {
+    background: #5558e3;
+}
+
+.btn-secondary {
+    border-color: #4b5563;
+    background: #111827;
+    color: #f9fafb;
+}
+
+.btn-secondary:hover {
+    background: #1f2937;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.compare-btn {
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .page {
+        padding: 16px;
+    }
+    
+    .page h1 {
+        font-size: 24px;
+    }
+}

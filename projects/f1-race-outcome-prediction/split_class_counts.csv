@@ -1,0 +1,4 @@
+split,years,rows,races,podium,top_ten,outside_top_ten
+train,2006-2017,4904,226,678,1573,2653
+dev,2018-2018,420,21,63,147,210
+test,2019-2020,758,38,114,265,379

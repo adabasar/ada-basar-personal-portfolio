@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>TradeOff - League</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="league.css">
+</head>
+
+<body>
+<div id="header-placeholder"></div>
+
+<div class="page">
+    <div id="loadingView" style="text-align: center; padding: 40px;">
+        <p style="color: #9ca3af;">Loading league data...</p>
+    </div>
+
+    <div id="leagueView" style="display:none;">
+        <h1 id="leagueNameHeading">
+            League: <span id="leagueNameDisplay"></span>
+        </h1>
+
+        <div class="grid" id="leagueContentGrid">
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Ranking Table</div>
+                    </div>
+                    <div class="btn-pill-group">
+                        <button class="btn-pill active" id="sortProfitLoss">Total P/L</button>
+                        <button class="btn-pill" id="sortWeeklyPL">1-Week P/L</button>
+                        <button class="btn-pill" id="sortPortfolioValue">Portfolio Value</button>
+                    </div>
+                </div>
+
+                <table id="rankingTable">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Member</th>
+                        <th>Total P/L %</th>
+                        <th>1-Week P/L %</th>
+                        <th>Portfolio Value ($)</th>
+                    </tr>
+                    </thead>
+                    <tbody id="rankingRows">
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">League Roster</div>
+                    </div>
+                    <button class="btn" id="settingsBtn" style="display:none;">
+                        League Settings
+                    </button>
+                </div>
+
+                <ul class="roster" id="rosterList"></ul>
+
+                <div class="settings-panel" id="settingsPanel">
+                    <div class="settings-row">
+                        <span class="settings-label">League Name</span>
+                        <input type="text" id="leagueNameInput" value="" 
+                               style="background:#020617;border:1px solid #4b5563;
+                               border-radius:6px;color:#e5e7eb;padding:4px 6px;
+                               font-size:12px;min-width:140px;">
+                    </div>
+
+                    <div class="settings-row">
+                        <span class="settings-label">Privacy</span>
+                        <div class="toggle-wrap">
+                            <label for="isPrivateToggle" style="font-size:12px;">Private</label>
+                            <input type="checkbox" id="isPrivateToggle">
+                        </div>
+                    </div>
+
+                    <div class="settings-footer">
+                        <div class="settings-footer-left">
+                            <button type="button" class="btn-primary btn" id="saveSettingsBtn">Save</button>
+                            <button type="button" class="btn" id="cancelSettingsBtn">Cancel</button>
+                        </div>
+                        <div id="settingsDangerZone"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div id="noLeagueView" class="no-league" style="display:none;">
+        <h2 class="no-league-heading">You're not currently in a league.</h2>
+        <p class="no-league-sub">
+            Join a public league to start competing with other traders.
+        </p>
+
+        <section class="card">
+            <div class="card-header">
+                <div class="card-title">Available Leagues</div>
+            </div>
+            <div class="league-list" id="leaguesList"></div>
+        </section>
+
+        <section class="card" style="margin-top: 16px;">
+            <div class="card-header">
+                <div class="card-title">Create Your Own League</div>
+            </div>
+            <div style="padding: 8px 0;">
+                <input type="text" id="newLeagueName" placeholder="Enter league name" 
+                       style="background:#020617;border:1px solid #4b5563;
+                       border-radius:6px;color:#e5e7eb;padding:6px 10px;
+                       font-size:13px;width:100%;max-width:300px;margin-bottom:10px;">
+                <div style="margin-bottom: 10px;">
+                    <label style="font-size:13px;">
+                        <input type="checkbox" id="newLeaguePrivate"> Make Private
+                    </label>
+                </div>
+                <button type="button" class="btn-primary btn" id="createLeagueBtn">
+                    Create League
+                </button>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script src="header.js"></script>
+
+<script>
+  fetch("header.html")
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById("header-placeholder").innerHTML = html;
+      
+      initHeader();
+      
+      const homeLink = document.querySelector(".nav-home");
+      if (homeLink) {
+        homeLink.style.display = "inline-flex";
+      }
+    })
+    .catch(err => {
+      console.error("Failed to load header.html:", err);
+    });
+</script>
+
+
+<script src="league.js"></script>
+
+</body>
+</html>

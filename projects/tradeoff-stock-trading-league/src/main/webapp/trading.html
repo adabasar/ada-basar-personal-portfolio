@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TradeOff - Trading</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="trading.css">
+</head>
+
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="page">
+        <section class="left-card">
+            <h1>Trading</h1>
+            <input id="stockSearchInput" type="text" placeholder="Search by name or symbol...">
+            <h2>Top 10 Traded Today</h2>
+            <div id="topStocksList" class="stock-list"></div>
+            <h2>Your Watchlist</h2>
+            <div id="watchlistList" class="watchlist"></div>
+        </section>
+
+        <section id="stock-details-panel" class="right-card details-card">
+            <header class="details-header">
+                <h2 id="details-symbol">Details for —</h2>
+                <div class="details-price-line">
+                    <span id="details-current-price" class="details-price">$--</span>
+                    <span id="details-change" class="details-change neutral">0.00%</span>
+                </div>
+            </header>
+
+            <div class="trend-controls">
+                <button class="trend-btn active" data-range="1D">Today</button>
+                <button class="trend-btn" data-range="1W">1W</button>
+                <button class="trend-btn" data-range="1M">1M</button>
+                <button class="trend-btn" data-range="6M">6M</button>
+                <button class="trend-btn" data-range="1Y">1Y</button>
+                <button class="trend-btn" data-range="5Y">5Y</button>
+            </div>
+
+            <div class="details-chart-wrapper">
+                <canvas id="stock-chart" height="180"></canvas>
+                <div id="chart-loading" class="details-chart-status hidden">Loading chart…</div>
+                <div id="chart-error" class="details-chart-status error hidden">
+                    Could not load historical data.
+                </div>
+            </div>
+
+            <section class="details-metrics">
+                <h3>Key Metrics</h3>
+                <dl>
+                    <div class="metric-row">
+                        <dt>Market Cap</dt>
+                        <dd id="metric-marketcap">—</dd>
+                    </div>
+                    <div class="metric-row">
+                        <dt>P/E (Price) – Ratio</dt>
+                        <dd id="metric-pe">—</dd>
+                    </div>
+                    <div class="metric-row">
+                        <dt>Dividend Yield</dt>
+                        <dd id="metric-dividend">—</dd>
+                    </div>
+                    <div class="metric-row">
+                        <dt>Current Price</dt>
+                        <dd id="metric-current">—</dd>
+                    </div>
+                    <div class="metric-row">
+                        <dt>Today’s Low / High</dt>
+                        <dd id="metric-lowhigh">—</dd>
+                    </div>
+                    <div class="metric-row">
+                        <dt>Beta Value</dt>
+                        <dd id="metric-beta">—</dd>
+                    </div>
+                    <div class="metric-row">
+                        <dt>Analyst / Equity Rating</dt>
+                        <dd id="metric-rating">—</dd>
+                    </div>
+                </dl>
+            </section>
+
+            <section class="details-about">
+                <h3>About</h3>
+                <p id="about-description">
+                    Select a stock from the list to see company information.
+                </p>
+            </section>
+        </section>
+    </div>
+
+    <script src="header.js"></script>
+    <script>
+        fetch("header.html")
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById("header-placeholder").innerHTML = html;
+
+                if (typeof initHeader === "function") {
+                    initHeader();
+                }
+
+                const homeLink = document.querySelector(".nav-home");
+                if (homeLink) {
+                    homeLink.style.display = "inline-flex";
+                }
+            })
+            .catch(err => {
+                console.error("Failed to load header.html:", err);
+            });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="trading-details.js"></script>
+</body>
+</html>

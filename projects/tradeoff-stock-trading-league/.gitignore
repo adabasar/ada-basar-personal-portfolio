@@ -1,0 +1,25 @@
+# Ignore macOS system files
+.DS_Store
+
+# Ignore IDE-specific files
+.metadata/
+
+# Ignore compiled Java class files
+*.class
+
+# Ignore library directories
+lib/
+
+# Ignore Maven build directories
+target/
+
+# Ignore temporary files
+*.pdf
+
+# Ignore documentation and planning files
+LEFTTOIMPLEMENT.md
+READMEAI.md
+
+daily_IBM.csv
+src/main/resources/config.properties
+/bin/

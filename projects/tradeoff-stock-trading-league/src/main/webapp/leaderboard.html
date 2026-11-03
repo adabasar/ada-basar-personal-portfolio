@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TradeOff - Leaderboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="league.css">
+    <link rel="stylesheet" href="leaderboard.css">
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<div class="page">
+    <!-- Leaderboard Card -->
+    <div class="card leaderboard-card">
+        <div class="card-header">
+            <div class="card-title">Leaderboard</div>
+            <div class="card-meta">Updated: <span id="updatedAgo">never</span></div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs" role="tablist">
+            <button class="tab active" id="tab-global" role="tab" aria-selected="true">
+                Global
+            </button>
+            <button class="tab" id="tab-league" role="tab" aria-selected="false">
+                My League
+            </button>
+        </div>
+
+        <!-- Leaderboard Table -->
+        <div class="leaderboard-container">
+            <div class="leaderboard-table-wrapper">
+                <table class="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th class="col-rank">Rank</th>
+                            <th class="col-user">User</th>
+                            <th class="col-equity">Portfolio Value</th>
+                            <th class="col-pct">% Change</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboardRows">
+                        <tr>
+                            <td colspan="4" style="text-align:center;padding:40px;color:#9ca3af;">
+                                Loading...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- User Details Sidebar -->
+            <div class="user-details-panel" id="userDetails">
+                <div class="user-empty">
+                    <p>Select a user to view details</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="leaderboard.js"></script>
+<script src="header.js"></script>
+</body>
+</html>

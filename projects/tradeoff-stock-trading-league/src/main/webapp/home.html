@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TradeOff - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="league.css" />
+  <link rel="stylesheet" href="home.css" />
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body
+  data-already-in-some-league="false"
+  data-is-admin="false"
+>
+  <div id="header-placeholder"></div>
+
+  <div class="page">
+    <h1>Home</h1>
+
+    <div class="grid">
+
+      <section class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Market Highlights</div>
+            <div class="card-subtitle">Top market movers today</div>
+          </div>
+
+          <div class="btn-pill-group" id="marketRangeGroup">
+            <button class="btn-pill active" data-range="1D">Today</button>
+            <button class="btn-pill" data-range="1W">1W</button>
+            <button class="btn-pill" data-range="1M">1M</button>
+          </div>
+        </div>
+
+        <div class="chart-container">
+          <canvas id="marketChart" height="160"></canvas>
+
+          <div id="marketChartLoading" class="chart-status">
+            Loading highlights...
+          </div>
+
+          <div
+            id="marketChartError"
+            class="chart-status chart-status-error"
+            style="display:none;"
+          >
+            Could not load market data.
+          </div>
+        </div>
+
+        <div class="top-movers" id="topMoversList"></div>
+      </section>
+
+      <!-- ================= LEAGUE ACTIONS ================= -->
+      <section class="card">
+        <div class="card-header">
+          <div class="card-title">League Actions</div>
+        </div>
+
+        <div
+          id="leagueErrorBox"
+          class="home-error"
+          style="display:none;"
+        ></div>
+
+        <div class="league-actions">
+          <button class="btn btn-primary" id="createLeagueBtn">
+            Create League
+          </button>
+
+          <button class="btn btn-danger" id="deleteLeagueBtn">
+            Delete League
+          </button>
+
+          <button class="btn" id="joinLeagueBtn">
+            Join Public League
+          </button>
+
+          <button class="btn" id="leaveLeagueBtn">
+            Unjoin Current League
+          </button>
+
+          <button class="btn btn-private" id="requestPrivateLeagueBtn">
+            Request to Join Private League
+          </button>
+        </div>
+
+        <p class="home-hint">
+          You can only be a member of <strong>one league at a time</strong>.
+        </p>
+
+        <hr class="home-divider" />
+
+        <div class="home-nav-buttons">
+          <button class="btn btn-secondary" data-link="trading.html">
+            Trading
+          </button>
+          <button class="btn btn-secondary" data-link="leaderboard.html">
+            Leaderboard
+          </button>
+          <button class="btn btn-secondary" data-link="portfolio.html">
+            Portfolio
+          </button>
+          <button class="btn btn-secondary" data-link="profile.html">
+            Profile
+          </button>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="header.js" defer></script>
+  <script src="home.js" defer></script>
+
+</body>
+</html>

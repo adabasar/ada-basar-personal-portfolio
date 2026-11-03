@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CS310 basar@usc.edu</string>
+    <string name="clock">\uD83D\uDD53</string>
+    <string name="flag">\uD83D\uDEA9</string>
+    <string name="mine">\uD83D\uDCA3</string>
+    <string name="pick">\u26CF</string>
+    <string name="flag_count_initial">\uD83D\uDEA9 6</string>
+    <string name="timer_initial">\uD83D\uDD53 0</string>
+    <string name="result_time">Used %d seconds.</string>
+    <string name="result_won">You won.\nGood job!</string>
+    <string name="result_lost">You lost.\nTry again!</string>
+    <string name="play_again">PLAY AGAIN</string>
+</resources>

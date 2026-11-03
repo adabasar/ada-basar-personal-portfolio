@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TradeOff - Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <div class="logo">TradeOff</div>
+
+        <div class="tabs">
+            <button class="tab active" id="loginTab">Login</button>
+            <button class="tab" id="registerTab">Register</button>
+        </div>
+
+        <div id="errorMessage" class="error"></div>
+        <div id="successMessage" class="success"></div>
+
+        <div id="loginForm" class="form-view active">
+            <form id="loginFormElement">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="loginUsername" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+
+                <button type="submit" class="btn" id="loginBtn">
+                    Login
+                </button>
+            </form>
+        </div>
+
+        <div id="registerForm" class="form-view">
+            <form id="registerFormElement">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" id="registerUsername" required>
+                    <div class="helper-text">Choose a unique username</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Display Name</label>
+                    <input type="text" id="registerDisplayName" required>
+                    <div class="helper-text">How your name will appear to others</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="registerPassword" required>
+                    <div class="helper-text">Minimum 6 characters</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" id="registerConfirmPassword" required>
+                </div>
+
+                <button type="submit" class="btn" id="registerBtn">
+                    Create Account
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="login.js"></script>
+
+</body>
+</html>

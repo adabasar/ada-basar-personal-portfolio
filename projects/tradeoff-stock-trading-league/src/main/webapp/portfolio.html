@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - TradeOff</title>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="nav-header">
+        <div class="nav-left">
+            <div class="logo">TradeOff</div>
+
+            <nav class="nav-links">
+                <a href="home.html" class="nav-item nav-home">Home</a>
+                <a href="portfolio.html" class="nav-item active">Portfolio</a>
+                <a href="league.html" class="nav-item nav-league">League</a>
+                <a href="leaderboard.html" class="nav-item">Leaderboard</a>
+                <a href="trading.html" class="nav-item nav-trading">Trading</a>
+            </nav>
+        </div>
+
+        <div class="nav-right">
+            <div class="notif-menu" id="notifMenu">
+                <button class="notif-button" id="notifButton" aria-label="Notifications">
+                    <span class="notif-icon">🔔</span>
+                    <span class="notif-badge" id="notifBadge">0</span>
+                </button>
+
+                <div class="notif-dropdown" id="notifDropdown">
+                    <div class="notif-header">Notifications</div>
+                    <ul class="notif-list" id="notifList">
+                        <li class="notif-empty">No notifications yet.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="profile-menu" id="profileMenu">
+                <button class="profile-emoji-btn" aria-label="Profile">
+                    👤
+                </button>
+
+                <div class="dropdown" id="profileDropdown">
+                    <a href="profile.html">Profile</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="login.html" class="nav-login">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="page">
+        <h1>Portfolio</h1>
+
+        <div class="grid">
+            <!-- Left Section: Profile and Balance -->
+            <section class="card profile-section">
+                <div class="profile-icon">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#6B4EFF" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <div class="balance">$0.00</div>
+                <div class="balance-label">Available Capital</div>
+                
+                <div class="portfolio-stats">
+                    <div class="stat-item">
+                        <div class="stat-label">Portfolio Value</div>
+                        <div class="stat-value">$0.00</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Total P/L</div>
+                        <div class="stat-value">+$0.00 (+0.0%)</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Middle Section: Personal Investments -->
+            <section class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Personal Investments</div>
+                        <div class="card-subtitle">Your current holdings</div>
+                    </div>
+                    <div class="sort-icons">
+                        <button class="icon-btn" title="More options">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="1"></circle>
+                                <circle cx="12" cy="5" r="1"></circle>
+                                <circle cx="12" cy="19" r="1"></circle>
+                            </svg>
+                        </button>
+                        <button class="icon-btn" title="Sort">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="18 15 12 9 6 15"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="investments-table-wrapper">
+                    <table class="investments-table">
+                        <thead>
+                            <tr>
+                                <th>Holdings</th>
+                                <th>Shares</th>
+                                <th>Gain/Loss</th>
+                                <th>%</th>
+                            </tr>
+                        </thead>
+                        <tbody id="investmentsBody">
+                            <tr>
+                                <td colspan="4" style="text-align:center; color:#9ca3af; padding: 20px;">
+                                    Loading holdings...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Right Section: Chart -->
+            <section class="card">
+                <div class="card-header">
+                    <div class="card-title">Performance</div>
+                    <div class="btn-pill-group" id="chartRangeGroup">
+                        <button class="btn-pill" data-range="1D">Day</button>
+                        <button class="btn-pill" data-range="1M">Mo</button>
+                        <button class="btn-pill active" data-range="1Y">Yr</button>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="portfolioChart"></canvas>
+                    <div id="chartLoading" class="chart-status">Loading chart...</div>
+                </div>
+
+                <button class="btn btn-secondary compare-btn">Compare to Index</button>
+            </section>
+        </div>
+    </div>
+
+    <!-- Load scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="portfolio.js"></script>
+</body>
+</html>
